@@ -31,6 +31,7 @@ model Merchandise {
   description String
   price       Int
   type        MerchandiseType
+  brand       String
   createdAt   DateTime        @default(now())
   updatedAt   DateTime        @updatedAt()
 
@@ -42,7 +43,7 @@ model Feature {
   id              Int      @id @default(autoincrement())
   title           String
   value           String
-  additionalPrice Int      @map("additional-price")
+  additionalPrice Int      @default(0) @map("additional-price")
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt()
 
@@ -52,7 +53,7 @@ model Feature {
 
 model Image {
   id        Int      @id @default(autoincrement())
-  color     String
+  color     String?
   path      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()

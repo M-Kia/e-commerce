@@ -38,3 +38,5 @@ next-env.d.ts
 
 # others
 /docker-data
+/public/uploads/*
+/.vscode
